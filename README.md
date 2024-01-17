@@ -1,2 +1,0 @@
-# Inversiones-PeriodismoDeDatos
-# Inversiones-PeriodismoDeDatos

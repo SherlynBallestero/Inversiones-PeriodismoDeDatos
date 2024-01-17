@@ -1,6 +1,6 @@
 //variables..
 var creditoInicial = 450;
-var annoActual = 2014;
+var annoActual = 2013;
 
 var cartasElement = document.getElementById("cartas");
 var opcionesNivel0 = [
@@ -169,10 +169,6 @@ var opcionesNivel3=[
     { objeto: "",precio:0 },
     { objeto: "",precio:0 },
     { objeto: "",precio:0 },
-    { objeto: "",precio:0 },
-    { objeto: "",precio:0 },
-    { objeto: "",precio:0 },
-    { objeto: "",precio:0 },
     { objeto: "",precio:0 }
 ];
 var opcionesNivel4=[
@@ -180,16 +176,9 @@ var opcionesNivel4=[
     { objeto: "",precio:0 },
     { objeto: "",precio:0 },
     { objeto: "",precio:0 },
-    { objeto: "",precio:0 },
-    { objeto: "",precio:0 },
-    { objeto: "",precio:0 },
-    { objeto: "",precio:0 },
     { objeto: "",precio:0 }
 ];
 var opcionesNivel5=[
-    { objeto: "",precio:0 },
-    { objeto: "",precio:0 },
-    { objeto: "",precio:0 },
     { objeto: "",precio:0 },
     { objeto: "",precio:0 },
     { objeto: "",precio:0 },
@@ -203,15 +192,9 @@ var opcionesNivel6=[
     { objeto: "",precio:0 },
     { objeto: "",precio:0 },
     { objeto: "",precio:0 },
-    { objeto: "",precio:0 },
-    { objeto: "",precio:0 },
-    { objeto: "",precio:0 },
     { objeto: "",precio:0 }
 ];
 var opcionesNivel7=[
-    { objeto: "",precio:0 },
-    { objeto: "",precio:0 },
-    { objeto: "",precio:0 },
     { objeto: "",precio:0 },
     { objeto: "",precio:0 },
     { objeto: "",precio:0 },
@@ -231,10 +214,7 @@ const textoMostrado = document.getElementById('textoMostrado');
 const oportunidad=document.getElementById("oportunidad");
 
 
-var yearElement=document.createElement("div");
-yearElement.className="year";
-yearElement.textContent="fecha:" + annoActual;
-cartasElement.appendChild(yearElement);
+
 
 //funciones
 boton.addEventListener('click', () => {
@@ -258,7 +238,7 @@ boton.addEventListener('click', () => {
         
 });
 botonAnterior.addEventListener("click",()=>{
-    if(annoActual==2014){
+    if(annoActual==2013){
         mostrarOpciones();
     }else{
         annoActual=annoActual-1;
@@ -274,6 +254,7 @@ botonAnterior.addEventListener("click",()=>{
 
 
 function mostrarTexto(objetoNombre){
+  
  fetch('dictionary.json')
   .then(response => response.json())
   .then(data => {
@@ -282,12 +263,16 @@ function mostrarTexto(objetoNombre){
     let respuesta=data[annoActual][0][objetoNombre]
     let sec=""
     let tamanno=respuesta.length;
-    for(let i=0;i<tamanno;i++){
-        sec+=respuesta[i]+"  ";
-        
-    }
-    oportunidad.textContent=objetoNombre;
-    textoMostrado.textContent=sec;
+   
+
+        for(let i=0;i<tamanno;i++){
+            sec+=respuesta[i]+"  ";
+            
+        }
+        oportunidad.textContent=objetoNombre;
+        textoMostrado.textContent=sec;
+    
+    
 
   });
 
@@ -305,6 +290,9 @@ function mostrarOpciones() {
 
     if (annoActual === 2013) {
         opciones = opcionesNivel0;
+        let inicio="Para iniciar, presione siguiente, a continuacion se mostraran en el selector un conjunto de oportunidades por sectores,extraidas de Las Carteras de Oportunidades pertenecienten a los respectivos annos, podra observar a medida que pasa de un anno al siguiente los resumenes de la inversion extranjera en cada anno y al seleccionar determinada oportunidad de inversion se representaran las descripciones y datos de cada una. ";
+        textoMostrado.textContent=inicio;
+        
     }else if(annoActual===2014){
         opciones=opcionesNivel1;
 
@@ -347,7 +335,10 @@ opciones.forEach(function(opcion) {
     opcionesElement.appendChild(selectElement);
     cartasElement.appendChild(opcionesElement);
 
- 
+    var yearElement=document.createElement("div");
+    yearElement.className="year";
+    yearElement.textContent="fecha:" + annoActual;
+    cartasElement.appendChild(yearElement);
     
 
 
