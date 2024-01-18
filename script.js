@@ -165,18 +165,33 @@ var opcionesNivel2 = [
 ];
 
 var opcionesNivel3=[
-    { objeto: "",precio:0 },
-    { objeto: "",precio:0 },
-    { objeto: "",precio:0 },
-    { objeto: "",precio:0 },
-    { objeto: "",precio:0 }
+    { objeto: "sector_agrícola_forestal_alimentario:PRODUCCIÓN DE CERDOS PARA LA COMERCIALIZACIÓN EN CANAL Y PRODUCTOS TERMINADOS DEL CERDO (5 PROYECTOS)",precio:0 },
+    { objeto: "sector_agrícola_forestal_alimentario:PRODUCCIÓN BUFALINA PARA LA INDUSTRIALIZACIÓN YCOMERCIALIZACIÓN DE LECHE Y SUS DERIVADOS",precio:0 },
+    { objeto: "sector_azucarero: ADMINISTRACIÓN DE CENTRAL CON BIOELÉCTRICA",precio:0 },
+    { objeto: "sector_azucaero:DERIVADOS MOLDEADOS DE BAGAZO: MÓDULOS DE CASAS DE TABLEROS DE BAGAZO-CEMENTO",precio:0 },
+    { objeto: "sector_industrias:REPARACIÓN, PRODUCCIÓN Y COMERCIALIZACIÓN DE LÁMPARAS DECORATIVAS",precio:0 },
+    { objeto: "sector_industrias:PRODUCCIÓN DE IMPLEMENTOS DEPORTIVOS",precio:0 },
+    { objeto: "sector_turismo:CONSTRUCCIÓN Y COMERCIALIZACIÓN DE CAPACIDADES HOTELERAS Y VILLAS DE ALTO ESTÁNDAR EN EL POLO TURÍSTICO CIENFUEGOS",precio:0 },
+    { objeto: "sector_turismo:CONSTRUCCIÓN Y COMERCIALIZACIÓN DE VILLAS DE ALTO ESTÁNDAR EN EL POLO TURÍSTICO COVARRUBIAS, LAS TUNAS",precio:0 },
+    { objeto: "sector_energía:CONTRATOS DE EXPLORACIÓN PETROLERA A RIESGO Y PRODUCCIÓN COMPARTIDA EN BLOQUES DE AGUAS SOMERAS DEL TERRITORIO NACIONAL. (8 BLOQUES)",precio:0 },
+    { objeto: "sector_energía:CONTRATOS DE EXPLORACIÓN PETROLERA A RIESGO Y PRODUCCIÓN COMPARTIDA EN BLOQUES DE LA ZONA ECONÓMICA EXCLUSIVA DE CUBA EN EL GOLFO DE MÉXICO (ZEE). (52 BLOQUES)",precio:0 },
+    { objeto: "sector_minería:RECONOCIMIENTO O INVESTIGACIONES GEOLÓGICAS (PROSPECCIÓN–EXPLORACIÓN) A RIESGO PARA METALES PRECIOSOS (ORO Y PLATA), METALES BASE (COBRE, PLOMO, ZINC) Y OTROS MINERALES DE INTERÉS EN PROSPECTOS DE LA REGIÓN CUBA CENTRAL",precio:0 },
+    { objeto: "sector_transporte:DESARROLLO, OPERACIÓN Y ADMINISTRACIÓN DE INSTALACIONES PORTUARIAS DEDICADAS A LA RECEPCIÓN DE BUQUES CRUCEROS. (4 PROYECTOS)",precio:0 },
+    { objeto: "sector_transporte:MODERNIZACIÓN EN INFRAESTRUCTURA Y EQUIPAMIENTO PARA EL DESARROLLO DE LOS TRABAJOS DE CHAPISTERÍA Y PINTURA DE VEHÍCULOS AUTOMOTORES EN LA RED DE TALLERES DE MOTOR CENTRO",precio:0 }
+    
 ];
 var opcionesNivel4=[
-    { objeto: "",precio:0 },
-    { objeto: "",precio:0 },
-    { objeto: "",precio:0 },
-    { objeto: "",precio:0 },
-    { objeto: "",precio:0 }
+    { objeto: "sector_cultura:ESTABLECIMIENTO DE UN SISTEMA DE CANALES DE PAGO PARA LA TV NACIONAL (TV PAGA)",precio:0 },
+    { objeto: "sector_cultura:INFORMÁTICA Y MEDIOS AUDIOVISUALES PARA LA EDUCACIÓN",precio:0 },
+    { objeto: "sector_bancario_financiero:SERVICIOS DE SEGUROS DE VIDA",precio:0 },
+    { objeto: "sector_bancario_financiero:SERVICIOS PARA SEGUROS DE CRÉDITO",precio:0 },
+    { objeto: "sector_hidráulico:PRODUCCIÓN DE TUBERÍAS DE POLIPROPILENO PARA LA CANALIZACIÓN DE REDES TÉCNICAS",precio:0 },
+    { objeto: "sector_hidráulico:SERVICIOS DE PERFORACIÓN DE POZOS PROFUNDOS",precio:0 },
+    { objeto: "sector_comercio:COMERCIALIZACIÓN MAYORISTA DE TEJIDOS, MERCERÍA, ACCESORIOS Y CONFECCIONES TEXTILES",precio:0 },
+    { objeto: "sector_comercio:OPERADOR LOGÍSTICO 3PL PARA LA GESTIÓN DE LAS CADENAS DE SUMINISTRO DE ALIMENTOS REFRIGERADOS.(3 PROYECTOS)",precio:0 },
+    { objeto: "sector_construcción:CONSTRUCCIÓN DE UNA PLANTA DE CAL EN ARTEMISA",precio:0 },
+    { objeto: "sector_construcción:CONSTRUCCIÓN DE UNA PLANTA DE MORTEROS SECOS EN ARTEMISA",precio:0 }
+   
 ];
 var opcionesNivel5=[
     { objeto: "",precio:0 },
@@ -187,12 +202,16 @@ var opcionesNivel5=[
     { objeto: "",precio:0 }
 ];
 var opcionesNivel6=[
-    { objeto: "",precio:0 },
-    { objeto: "",precio:0 },
-    { objeto: "",precio:0 },
-    { objeto: "",precio:0 },
-    { objeto: "",precio:0 },
-    { objeto: "",precio:0 }
+    { objeto: "sector_cultura:INFORMÁTICA Y MEDIOS AUDIOVISUALES PARA LA EDUCACIÓN",precio:0 },
+    { objeto: "SISTEMA DE CANALES DE PAGO PARA LA TV NACIONAL (TV PAGA)",precio:0 },
+    { objeto: "sector_minería:TALLER DE SERVICIOS AUTOMOTORES A EQUIPOS MINEROS Y DE MOVIMIENTO DE TIERRA",precio:0 },
+    { objeto: "sector_minería:PROYECTO COLAS ROJAS, PROVINCIA DE HOLGUÍN",precio:0 },
+    { objeto: "sector_industria_ligera: REMODELACIÓN Y MODERNIZACIÓN DEL TALLER DE FUNDICIÓN Y TRATAMIENTO TÉRMICO",precio:0 },
+    { objeto: "sector_industria_ligera:PRESTACIÓN DE SERVICIOS DE ENSAMBLAJE, MANTENIMIENTO, REPARACIÓN Y COMERCIALIZACIÓN DE CAMIONES PARA USOS MÚLTIPLES, PESADOS Y SEMIPESADOS PARA LA TRANSPORTACIÓN DE CARGAS EN EL SECTOR AGROPECUARIO, TABACALERO Y FORESTAL",precio:0 },
+    { objeto: "sector_agroindustriar_azucarera_derivados:ADMINISTRACIÓN DE CENTRAL CON BIOELÉCTRICA(2 PROYECTOS)",precio:0 },
+    { objeto: "sector_agroindustriar_azucarera_derivados:PRODUCCIÓN DE FOS (FRUCTO OLIGO SACÁRIDOS) Y SORBITOL",precio:0 },
+    { objeto: "sector_agroindustriar_azucarera_derivados:MODERNIZACIÓN DE FÁBRICA DE CALDERAS",precio:0 },
+    { objeto: "sector_agroindustriar_azucarera_derivados: AMPLIACIÓN Y MODERNIZACIÓN DE RONERA",precio:0 }
 ];
 var opcionesNivel7=[
     { objeto: "",precio:0 },
@@ -251,7 +270,22 @@ botonAnterior.addEventListener("click",()=>{
     
 });
 
+function mostrarResumen(){
+    fetch('dictionary.json')
+    .then(response => response.json())
+    .then(data => {
+      console.log(data);
+      // Mostrar el primer texto en la página
+      let respuesta=data[annoActual][1]
+      textoMostrado.textContent=respuesta;
+      
+      
+  
+    });
 
+   mostrarOpciones()
+   
+}
 
 function mostrarTexto(objetoNombre){
   
@@ -290,7 +324,7 @@ function mostrarOpciones() {
 
     if (annoActual === 2013) {
         opciones = opcionesNivel0;
-        let inicio="Para iniciar, presione siguiente, a continuacion se mostraran en el selector un conjunto de oportunidades por sectores,extraidas de Las Carteras de Oportunidades pertenecienten a los respectivos annos, podra observar a medida que pasa de un anno al siguiente los resumenes de la inversion extranjera en cada anno y al seleccionar determinada oportunidad de inversion se representaran las descripciones y datos de cada una. ";
+        let inicio="Para iniciar, presione siguiente. A continuación se mostrarán en el selector un conjunto de oportunidades por sectores, extraídas de las Carteras de Oportunidades pertenecientes a los respectivos años. Podrá observar, a medida que pase de un año al siguiente, los resúmenes de la inversión extranjera en cada año y al seleccionar una oportunidad de inversión determinada, se representarán las descripciones y datos de cada una";
         textoMostrado.textContent=inicio;
         
     }else if(annoActual===2014){
@@ -308,9 +342,8 @@ function mostrarOpciones() {
     }else if(annoActual== 2019){
         opciones = opcionesNivel6;
     }else if(annoActual== 2020){
-        let text="Al cabo de los annos en Cuba se puede apreciar que la inversion extranjera obtuvo una particion connotoria en el sector turismo y en casi todos se obtuvo un reembolso de cerca de 4 millones de dolares"
-        textoMostrado.textContent=text;
-        opciones = opcionesNivel7;
+        mostrarResumen();
+       
     }
 
    
